@@ -5,7 +5,7 @@ class ObjectTests(unittest.TestCase):
         return super().setUp()
 
     def test_business_manager(self):
-        from BusinessManager import BusinessManager
+        from .BusinessManager import BusinessManager
         b = BusinessManager()
         self.assertIsNotNone(b)
 

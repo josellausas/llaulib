@@ -19,7 +19,7 @@ mockEnv = {
 class TestLlauLibChato(unittest.TestCase):
     
     def test_chato(self):
-        from chato import Chato
+        from llaulib.chato import Chato
         self.assertIsNotNone(Chato.getInstance())
 
         # Should Post
@@ -35,12 +35,12 @@ class TestLlauLibChato(unittest.TestCase):
 class TestLlauLibNotapi(unittest.TestCase):
     @mock.patch.dict(os.environ, mockEnv, clear=True)
     def test_napi(self):
-        from chato import Notapi
+        from llaulib.chato import Notapi
         self.assertIsNotNone(Notapi)
     
     @mock.patch.dict(os.environ, mockEnv, clear=True)
     def test_is_domain_live(self):
-        from chato import Notapi
+        from llaulib.chato import Notapi
         self.assertTrue(Notapi.is_domain_live('llau.systems'))
 
 if __name__ == '__main__':
