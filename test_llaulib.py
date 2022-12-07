@@ -20,7 +20,6 @@ mockEnv = {
 
 # TODO: Update the tests to phone home only when CI_PIPELINE is true
 class TestLlauLibChato(unittest.TestCase):
-    
     def test_chato(self):
         
         self.assertIsNotNone(Chato.getInstance())

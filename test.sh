@@ -1,1 +1,1 @@
-python ./tests.py
+python ./test_llaulib.py
