@@ -17,6 +17,8 @@ class Broker():
     def unsubscribe(self, topic, subscriber):
         if self.isSubscribed(topic, subscriber):
             self._topics[topic].remove(subscriber)
+            return True
+        return False
     
     def publish(self, topic='#', msg="Hello World"):
         if topic in self._topics.keys():
@@ -30,5 +32,5 @@ class Broker():
             return False
 
 class Subscriber():
-    def onMessageReceived(topic, msg):
-        print(f'Received: #{topic} - $ {msg}!' % (msg))
+    def onMessageReceived(self, topic, msg):
+        print(f'Received: #{topic} - $ {msg}!')
