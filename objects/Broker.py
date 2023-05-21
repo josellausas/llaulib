@@ -33,4 +33,5 @@ class Broker():
 
 class Subscriber():
     def onMessageReceived(self, topic, msg):
-        print(f'Received: #{topic} - $ {msg}!')
+        # print(f'Received: #{topic} - $ {msg}!')
+        pass
