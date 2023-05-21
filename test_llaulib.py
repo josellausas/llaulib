@@ -18,22 +18,6 @@ mockEnv = {
     "NOTION_DB": "unknown_db"
 }
 
-# TODO: Update the tests to phone home only when CI_PIPELINE is true
-class TestLlauLibChato(unittest.TestCase):
-    def test_chato(self):
-        
-        self.assertIsNotNone(Chato.getInstance())
-
-        # Should Post
-        Chato.getInstance().enable()
-        self.assertTrue(Chato.getInstance().enabled)
-        result = Chato.chato('Chato was tested', 'home.tests.test_chato', 'llau-systems')
-        self.assertEqual(result, 0) # 0 means SUCCESS
-        
-        # Should Disable
-        Chato.getInstance().disable()
-        self.assertFalse(Chato.getInstance().enabled)
-
 class TestLlauLibNotapi(unittest.TestCase):
     @mock.patch.dict(os.environ, mockEnv, clear=True)
     def test_napi(self):
