@@ -1,5 +1,6 @@
 import unittest
 from .Broker import Broker, Subscriber
+from .AStar import AStarSearch
 
 class ObjectTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -51,6 +52,17 @@ class BrokerTests(unittest.TestCase):
         self.subscriber.receivedMsg = 'untouched'
         self.broker.publish(self.topic, self.message)
         self.assertEqual(self.subscriber.receivedMsg, 'untouched')
+
+class AStarTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.search = AStarSearch()
+        self.map = {}
+        return super().setUp()
+    
+    def test_load_map(self):
+        self.assertTrue(self.search.load_map(self.map))
+        self.assertIsNotNone(self.search.map)
+        
 
 if __name__ == '__main__':
     unittest.main()

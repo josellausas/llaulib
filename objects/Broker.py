@@ -31,6 +31,11 @@ class Broker():
         else:
             return False
 
+b = Broker()
+def get_broker():
+    return b
+
+
 class Subscriber():
     def onMessageReceived(self, topic, msg):
         # print(f'Received: #{topic} - $ {msg}!')
